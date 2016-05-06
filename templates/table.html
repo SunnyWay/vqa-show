@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>{{ table_name }}</title>
+{% for item in css %}
+<link href="{{ item }}" rel="stylesheet">
+{% endfor %}
+{% for item in js %}
+<script type="text/javascript" src="{{ item }}"></script>
+{% endfor %}
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="span4">
+        </div>
+        <div class="span4">
+            <h4 class="text-center">{{ table_name }}</h4>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                    {% for col in head %}
+                        <td>{{ col }}</td>
+                    {% endfor %}
+                    </tr>
+                </thead>
+                <tbody>
+                {% for row in body %}
+                    <tr>
+                    {% for col in row %}
+                        <td>{{ col }}</td>
+                    {% endfor %}
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="span4">
+        </div>
+    </div>
+</div>
+</body>

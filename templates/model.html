@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>{{ model_name }}</title>
+{% for item in css %}
+<link href="{{ item }}" rel="stylesheet">
+{% endfor %}
+{% for item in js %}
+<script type="text/javascript" src="{{ item }}"></script>
+{% endfor %}
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="span2">
+        </div>
+        <div class="span8">
+            <div class="row-fluid">
+                <div class="span12">
+                    <h3 class="text-center">{{ question }}&nbsp;({{ answer }})</h3>
+                </div>
+                <div class="span12">
+                    <div class="row-fluid">
+                        <div class="span6">
+                            <img alt="140x140" src="{{ image }}" class="img-rounded" />
+                        </div>
+                        <div class="span6">
+                            <table class="table table-striped">
+                                <tbody>
+                                {% for item in pred %}
+                                    {% if item[0] %}
+                                    <tr class="success"><td>{{ item[1] }}</td><td>{{ item[2] }}</td></tr>
+                                    {% else %}
+                                    <tr><td>{{ item[1] }}</td><td>{{ item[2] }}</td></tr>
+                                    {% endif %}
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="span2">
+        </div>
+    </div>
+</div>
+</body>
