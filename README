@@ -1,0 +1,10 @@
+A project for showing dataset and results of models in VQA.
+
+First you need to install python and flask. 
+Then clone this project and place the data into proper path as follow.
+
+Put COCO images to `static/coco_images/`.
+Put COCO-QA dataset to `static/COCO-QA/`.
+The paths above can be modified in `CocoqaDataset.py`.
+
+The trained models may be placed at `static/models/` in default.
