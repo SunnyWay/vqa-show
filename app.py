@@ -12,6 +12,7 @@ app = Flask(__name__)
 coco = CocoqaDataset()
 MM = ModelManager(coco)
 
+@app.route('/')
 @app.route('/dataset/')
 @app.route('/dataset/<split_name>/')
 @app.route('/dataset/<split_name>/<q_type>/')
@@ -59,4 +60,4 @@ def model_acc(model_name):
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0',debug=True)
+    app.run(host='0.0.0.0', port=6080, debug=True)
