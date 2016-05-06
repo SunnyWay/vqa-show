@@ -29,9 +29,17 @@
                                 <tbody>
                                 {% for item in pred %}
                                     {% if item[0] %}
-                                    <tr class="success"><td>{{ item[1] }}</td><td>{{ item[2] }}</td></tr>
+                                    <tr class="success">
+                                        <td>{{ loop.index }}</td>
+                                        <td>{{ item[1] }}</td>
+                                        <td>{{ item[2] }}</td>
+                                    </tr>
                                     {% else %}
-                                    <tr><td>{{ item[1] }}</td><td>{{ item[2] }}</td></tr>
+                                    <tr>
+                                        <td>{{ loop.index }}</td>
+                                        <td>{{ item[1] }}</td>
+                                        <td>{{ item[2] }}</td>
+                                    </tr>
                                     {% endif %}
                                 {% endfor %}
                                 </tbody>
